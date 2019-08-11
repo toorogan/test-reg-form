@@ -1,0 +1,15 @@
+
+{% import "../components/head.twig" as head %}
+{% import "../components/scripts.twig" as scripts %}
+
+
+<!DOCTYPE html>
+<html>
+{{ head.default() }}
+<body>
+<section>
+    {% block page %}{% endblock %}
+</section>
+{{ scripts.default() }}
+</body>
+</html>
