@@ -1,0 +1,56 @@
+{% macro common(placeholder, value, type, header, classes, name) %}
+    <div class="input__wrapper  {{ classes }}">
+        {% if header %}
+            <p class="input__header">{{ header }}</p>
+        {% endif %}
+        <input 
+            name="{{name}}" 
+            type="{{type}}" 
+            placeholder="{{ placeholder }}" 
+            class="input"   {% if value %} value="{{ value }}"  {% endif %}>
+       
+        
+    </div>
+{% endmacro %}
+ 
+
+ {% macro radio(label, id, name, checked, classes) %}
+    <div class="input__wrapper  {{ classes }}">
+
+        <input
+            {% if checked %}  checked {% endif %}
+
+            name="{{name}}"
+            id="{{id}}" 
+            type="radio"
+            hidden
+            class="input-radio">
+        <label for="{{id}}" class="radio-label__mark"></label>
+        <label for="{{id}}" class="radio-label">
+            <span class="radio-label__text">{{ label }}</span>
+        </label> 
+       
+        
+    </div>
+{% endmacro %}
+
+
+
+ {% macro checkbox(label, id, checked, classes) %}
+    <div class="input__wrapper__checkbox  {{ classes }}">
+
+        <input
+            {% if checked %}  checked {% endif %}
+
+     
+            id="{{id}}" 
+            type="checkbox"
+      
+            class="input-checkbox">  
+        <label for="{{id}}" class="checkbox-label">
+            <span class="checkbox-label__text">{{ label }}</span>
+        </label> 
+       
+        
+    </div>
+{% endmacro %}

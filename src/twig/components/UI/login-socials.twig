@@ -1,0 +1,12 @@
+{% macro common(items) %}
+    <div class="modal__socials">
+        <span class="modal__socials__label">Войти через:</span>
+        <ul class="modal__socials__list">
+            {% for item in items %}
+                <li class="modal__socials__list__item">
+                    <a href="{{ item.href }}" class="icon icon-{{item.icon}}"></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}

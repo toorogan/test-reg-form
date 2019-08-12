@@ -1,0 +1,56 @@
+{% import "UI/button.twig" as button %}
+{% import "UI/modal-tabs.twig" as modal_tabs %}
+{% import "UI/login-socials.twig" as login_socials %}
+{% import "UI/input.twig" as input %}
+
+<div class="modal-wrapper">
+    
+    <div class="modal">
+        <h2 class="modal__header">Вход на сайт</h2>
+        {{ modal_tabs.modal_tabs([
+            {classes: 'modal-tabs__item auth ', text: 'Вход'},
+            {classes: 'modal-tabs__item reg active', text: 'Регистрация'},
+        ]) }}
+        <div class="modal__forms">
+        
+            <form action="#" id="form-auth" class="modal__form modal__form--auth ">
+                <h3 class="modal__form__header">Войти</h3>
+                {{input.common('Email', '', 'email', 'Введите ваш email *', '', 'email')}}
+                {{input.common('Пароль', '', 'password', 'Введите ваш пароль *', '')}}
+                <p class="password-recovery-link"> Забыли пароль?</p>
+                {{ button.common('ВОЙТИ', 'button--black l-7')}}
+            </form>
+
+            
+            <form action="#" id="form-reg" class="modal__form modal__form--reg active">
+                <h3 class="modal__form__header">Регистрация</h3>
+                {{input.common('Имя*', '', 'text', 'Введите ваше имя, фамилию, отчество', '', 'name')}}
+                {{input.common('Фамилия*', '', 'text', '', '')}}
+                {{input.common('Отчество*', '', 'text', '', '')}}
+                <div class="modal__checkboxes">
+                    {{input.radio('Женщина', 'woman', 'gender', true, '')}}
+                    {{input.radio('Мужчина', 'man', 'gender', false, '')}}
+                </div>
+                <div class="modal__inputs">
+                    {{input.common('Страна', '', 'text', 'Введите вашу страну*', 'l-6', 'country')}}
+                    {{input.common('Телефон', '+7', 'text', 'Введите номер телефона*', 'l-6', 'phone')}}
+                </div>
+                {{input.common('Email*', '', 'email', 'Введите ваш Email*', '', 'email')}}
+                {{input.common('Пароль*', '', 'password', 'Придумайте пароль*', '', 'password')}}
+                <div class="modal__checkboxes">
+                    {{input.checkbox('Подписаться на рассылку о распродажах и подборках наших стилистов', 'subscribe', true, '')}}
+                </div>
+                {{ button.common('ЗАРЕГИСТРИРОВАТЬСЯ', 'button--black l-7')}}
+                <p class="modal__agreement">Нажимая кнопку, вы соглашаетесь на обработку персональных данных в соответствии с <a href="#" class="modal__agreement__link"> Политикой конфиденциальности </a></p>
+            </form>
+        </div>
+        {{ login_socials.common([
+            
+            {icon: 'fb', href: '#'},
+            {icon: 'vk', href: '#'},
+            {icon: 'ok', href: '#'}
+            ])}}
+    </div>
+</div>
+
+    

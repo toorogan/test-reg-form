@@ -1,0 +1,11 @@
+{% macro modal_tabs(tabs) %}
+    <ul class="modal-tabs">
+        {% for tab in tabs %}
+                <li class="{{ tab.classes }}">
+                <button >{{ tab.text }}</button>
+                </li>
+        {% endfor %}
+    
+    </ul>
+
+{% endmacro %}

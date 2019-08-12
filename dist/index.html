@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html>
  <meta charset="utf-8">
@@ -17,10 +16,215 @@
 
 
 <body>
-<section>
-    </section>
+
+    
+<div class="modal-wrapper">
+    
+    <div class="modal">
+        <h2 class="modal__header">Вход на сайт</h2>
+            <ul class="modal-tabs">
+                        <li class="modal-tabs__item auth ">
+                <button >Вход</button>
+                </li>
+                        <li class="modal-tabs__item reg active">
+                <button >Регистрация</button>
+                </li>
+            
+    </ul>
+
+
+        <div class="modal__forms">
+        
+            <form action="#" id="form-auth" class="modal__form modal__form--auth ">
+                <h3 class="modal__form__header">Войти</h3>
+                    <div class="input__wrapper  ">
+                    <p class="input__header">Введите ваш email *</p>
+                <input 
+            name="email" 
+            type="email" 
+            placeholder="Email" 
+            class="input"   >
+       
+        
+    </div>
+
+                    <div class="input__wrapper  ">
+                    <p class="input__header">Введите ваш пароль *</p>
+                <input 
+            name="" 
+            type="password" 
+            placeholder="Пароль" 
+            class="input"   >
+       
+        
+    </div>
+
+                <p class="password-recovery-link"> Забыли пароль?</p>
+                        <button class="button button--black l-7" >ВОЙТИ</button>
+
+            </form>
+
+            
+            <form action="#" id="form-reg" class="modal__form modal__form--reg active">
+                <h3 class="modal__form__header">Регистрация</h3>
+                    <div class="input__wrapper  ">
+                    <p class="input__header">Введите ваше имя, фамилию, отчество</p>
+                <input 
+            name="name" 
+            type="text" 
+            placeholder="Имя*" 
+            class="input"   >
+       
+        
+    </div>
+
+                    <div class="input__wrapper  ">
+                <input 
+            name="" 
+            type="text" 
+            placeholder="Фамилия*" 
+            class="input"   >
+       
+        
+    </div>
+
+                    <div class="input__wrapper  ">
+                <input 
+            name="" 
+            type="text" 
+            placeholder="Отчество*" 
+            class="input"   >
+       
+        
+    </div>
+
+                <div class="modal__checkboxes">
+                        <div class="input__wrapper  ">
+
+        <input
+              checked 
+            name="gender"
+            id="woman" 
+            type="radio"
+            hidden
+            class="input-radio">
+        <label for="woman" class="radio-label__mark"></label>
+        <label for="woman" class="radio-label">
+            <span class="radio-label__text">Женщина</span>
+        </label> 
+       
+        
+    </div>
+
+                        <div class="input__wrapper  ">
+
+        <input
+            
+            name="gender"
+            id="man" 
+            type="radio"
+            hidden
+            class="input-radio">
+        <label for="man" class="radio-label__mark"></label>
+        <label for="man" class="radio-label">
+            <span class="radio-label__text">Мужчина</span>
+        </label> 
+       
+        
+    </div>
+
+                </div>
+                <div class="modal__inputs">
+                        <div class="input__wrapper  l-6">
+                    <p class="input__header">Введите вашу страну*</p>
+                <input 
+            name="country" 
+            type="text" 
+            placeholder="Страна" 
+            class="input"   >
+       
+        
+    </div>
+
+                        <div class="input__wrapper  l-6">
+                    <p class="input__header">Введите номер телефона*</p>
+                <input 
+            name="phone" 
+            type="text" 
+            placeholder="Телефон" 
+            class="input"    value="+7"  >
+       
+        
+    </div>
+
+                </div>
+                    <div class="input__wrapper  ">
+                    <p class="input__header">Введите ваш Email*</p>
+                <input 
+            name="email" 
+            type="email" 
+            placeholder="Email*" 
+            class="input"   >
+       
+        
+    </div>
+
+                    <div class="input__wrapper  ">
+                    <p class="input__header">Придумайте пароль*</p>
+                <input 
+            name="password" 
+            type="password" 
+            placeholder="Пароль*" 
+            class="input"   >
+       
+        
+    </div>
+
+                <div class="modal__checkboxes">
+                        <div class="input__wrapper__checkbox  ">
+
+        <input
+              checked 
+     
+            id="subscribe" 
+            type="checkbox"
+      
+            class="input-checkbox">  
+        <label for="subscribe" class="checkbox-label">
+            <span class="checkbox-label__text">Подписаться на рассылку о распродажах и подборках наших стилистов</span>
+        </label> 
+       
+        
+    </div>
+
+                </div>
+                        <button class="button button--black l-7" >ЗАРЕГИСТРИРОВАТЬСЯ</button>
+
+                <p class="modal__agreement">Нажимая кнопку, вы соглашаетесь на обработку персональных данных в соответствии с <a href="#" class="modal__agreement__link"> Политикой конфиденциальности </a></p>
+            </form>
+        </div>
+            <div class="modal__socials">
+        <span class="modal__socials__label">Войти через:</span>
+        <ul class="modal__socials__list">
+                            <li class="modal__socials__list__item">
+                    <a href="#" class="icon icon-fb"></a>
+                </li>
+                            <li class="modal__socials__list__item">
+                    <a href="#" class="icon icon-vk"></a>
+                </li>
+                            <li class="modal__socials__list__item">
+                    <a href="#" class="icon icon-ok"></a>
+                </li>
+                    </ul>
+    </div>
+
+    </div>
+</div>
+
+    
+
     <script src="assets/js/script.js"></script>
 
 
 </body>
-</html>
+</html>   

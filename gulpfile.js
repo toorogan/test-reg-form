@@ -8,7 +8,6 @@ const rename = require('gulp-rename');
 const minify = require('gulp-csso');
 const babel = require('gulp-babel');
 const del = require('del');
-const minifyjs = require('gulp-minify');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const twig = require('gulp-twig');
@@ -59,6 +58,10 @@ gulp.task('build', ['clear-build'], () => {
         pipe(plumber()).
         pipe(svgo()).
         pipe(gulp.dest('build/assets/img/svg/'));
+    gulp.src(`src/fonts/*`).
+        pipe(plumber()).
+        pipe(svgo()).
+        pipe(gulp.dest('build/assets/fonts/'));
 
 })
 
@@ -106,6 +109,16 @@ gulp.task('svgo', () => {
         pipe(gulp.dest('dist/assets/img/svg'));
 })
 
+gulp.task('fonts', () => {
+    return gulp.src(`src/fonts/*`).
+        pipe(plumber()).
+        pipe(gulp.dest('dist/assets/fonts'));
+})
+
+gulp.task('fonts-whatch', ['fonts'], (done) => {
+    server.reload();
+    done();
+})
 
 gulp.task('style-whatch', ['style'], (done) => {
     server.reload();
@@ -124,7 +137,7 @@ gulp.task('scripts-whatch', ['scripts'], (done) => {
     done();
 })
 gulp.task('dev', ['clear-dist'], () => {
-    gulp.start('twig', 'style', 'scripts', 'imgs', 'svgo');
+    gulp.start('twig', 'style', 'scripts', 'imgs', 'svgo', 'fonts');
     server.init({
         server: `./dist`,
         notify: false,
@@ -135,6 +148,7 @@ gulp.task('dev', ['clear-dist'], () => {
       gulp.watch(`src/scss/**/*.{scss,sass}`, [`style-whatch`]);
       gulp.watch(`src/twig/**/*.twig`, [`twig-whatch`]);
       gulp.watch(`src/js/**/*.js`, [`scripts-whatch`]);
-      gulp.watch(`src/img/**/*.*`, [`img-whatch`, ]);
+      gulp.watch(`src/img/**/*.*`, [`img-whatch`]);
+      gulp.watch(`src/fonst/**/*.*`, [`fonts-whatch` ]);
     
 })

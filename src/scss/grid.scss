@@ -1,0 +1,11 @@
+@media screen and (min-width: 1025px) {
+    .l-6 {
+        width: 50%;
+        &:first-child {
+            margin-right: 0.7rem;
+        }
+    }
+    .l-7 {
+        width: calc((100% / 12) * 7);
+    }
+}
